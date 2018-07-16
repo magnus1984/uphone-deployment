@@ -2,12 +2,23 @@
 Instruction on how to deploy the trinimbus web application assignments
 
 ## Introduction
-This repo contains instructions on how to deploy a simple single page application built with React + AWS Lambda that allows for the verification of 
+This repo contains instructions on how to deploy a simple single-page application built with React + AWS Lambda that allows for the verification of 
 users phone numbers, as is commonly seen on many websites. This work was produced for **Byron Packwood** as part of 
 the [Trinumbus](https://www.trinimbus.com/) hiring process for solutions architect.
 
 ## Live Demo
 An already deployed live demo of this application can be found here []()
+
+## Solution architecture overview
+The web application is a 3-tier application using the following components for each tiers:
+
+1. AWS S3 for the presentation layer (highly-available).
+2. AWS Lambda for the application layer (highly-available).
+3. AWS DynamoDB for the data layer (highly-available).
+
+Every layer is deployed on multiple AZ, as part of AWS managed services.
+The solution supports serving the static assets over https with AWS CloudFront. The solution also conforms to modern idioms
+of web development such as single-page applications, serverless architecture and highly-available NoSQL like DynamoDB. 
 
 ## Deployment
 This sections details the step required to deploy the solution on your on AWS account.
