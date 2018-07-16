@@ -18,7 +18,8 @@ The web application is a 3-tier application using the following components for e
 
 Every layer is deployed on multiple AZ, as part of AWS managed services.
 The solution conforms to modern idioms
-of web development such as single-page applications, serverless architecture and highly-available NoSQL like DynamoDB. 
+of web development such as single-page applications, serverless architecture and highly-available NoSQL databases 
+like DynamoDB. 
 
 The solution will be assembled from 2 projects I have built. the repos for the projects can be found here:
 
