@@ -16,7 +16,7 @@ The web application is a 3-tier application using the following components for e
 2. AWS Lambda for the application layer (for application logic, like sms sending; highly-available).
 3. AWS DynamoDB for the data layer (for persisting phone numbers; highly-available).
 
-Every layer is deployed on multiple AZ, as part of AWS managed services.
+Every layer is deployed in multiple AZ, as part of AWS managed services.
 The solution conforms to modern idioms
 of web development such as single-page applications, serverless architecture and highly-available NoSQL databases 
 like DynamoDB. 
