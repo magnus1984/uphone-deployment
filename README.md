@@ -37,7 +37,7 @@ with S3 and CloudFront to support SSL, and you can read the details
 
 ### Requirements
 
-#### Operating System
+#### Deploy Machine Operating System
 Ubuntu 16.04 LTS
 
 #### IAM user and permissions
