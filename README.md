@@ -12,9 +12,9 @@ An already deployed live demo of this application can be found [here](http://jom
 ## Solution architecture overview
 The web application is a 3-tier application using the following components for each tiers:
 
-1. AWS S3 for the presentation layer (highly-available).
-2. AWS Lambda for the application layer (highly-available).
-3. AWS DynamoDB for the data layer (highly-available).
+1. AWS S3 for the presentation layer (to serve static assets; highly-available).
+2. AWS Lambda for the application layer (for application logic, like sms sending; highly-available).
+3. AWS DynamoDB for the data layer (for persisting phone numbers; highly-available).
 
 Every layer is deployed on multiple AZ, as part of AWS managed services.
 The solution conforms to modern idioms
