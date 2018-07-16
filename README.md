@@ -20,6 +20,11 @@ Every layer is deployed on multiple AZ, as part of AWS managed services.
 The solution conforms to modern idioms
 of web development such as single-page applications, serverless architecture and highly-available NoSQL like DynamoDB. 
 
+The solution will be assembled from 2 projects I have built. the repos for the projects can be found here:
+
+1. https://github.com/magnus1984/muphone.git
+2. https://github.com/magnus1984/muphone-frontend.git
+
 ## Deployment
 This sections details the step required to deploy the solution on your on AWS account.
 
