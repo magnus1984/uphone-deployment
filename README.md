@@ -7,7 +7,7 @@ users phone numbers, as is commonly seen on many websites. This work was produce
 the [Trinimbus](https://www.trinimbus.com/) hiring process for solutions architect.
 
 ## Live Demo
-An already deployed live demo of this application can be found here []()
+An already deployed live demo of this application can be found [here](http://jomagnus1984-trinimbus-frontend-hostingbucket-1pmtg54qeouiu.s3-website.ca-central-1.amazonaws.com/)
 
 ## Solution architecture overview
 The web application is a 3-tier application using the following components for each tiers:
