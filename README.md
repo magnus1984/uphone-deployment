@@ -27,12 +27,12 @@ The solution will be assembled from 2 projects I have built. the repos for the p
 2. https://github.com/magnus1984/muphone-frontend.git
 
 ## Deployment
-This sections details the step required to deploy the solution on your on AWS account.
+This sections details the step required to deploy the solution on your AWS account.
 
 ### Important note on https
 In order to support https, we need to have a CloudFront distribution in front of our S3 bucket. In the interest
 of saving time, I have not included this as part of my solution. I have blogged about using AWS Certificate Manager
-with S3 and CloudFront to support SSL and you can read the details 
+with S3 and CloudFront to support SSL, and you can read the details 
 [here](https://hedgenet.info/posts/static-s3-cloudformation.html) if you are interested.
 
 ### Requirements
