@@ -88,7 +88,7 @@ source .frontenv/bin/activate
 npm install
 
 # Build the application
-REACT_API_ENDPOINT_URL=$REACT_API_ENDPOINT_URL npm run build
+REACT_APP_API_ENDPOINT_URL=$REACT_APP_API_ENDPOINT_URL npm run build
 
 # Deploy the frontend infrastructure
 aws cloudformation deploy --template-file src/infrastructure.yaml --stack-name jomagnus1984-trinimbus-frontend
