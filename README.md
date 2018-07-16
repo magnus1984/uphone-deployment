@@ -50,6 +50,8 @@ for installation and setup instructions, please refer to the respective projects
 Follow these steps to deploy the solution to your AWS account.
 
 #### Backend Deployment
+Please se the documentation for the backend [here](https://github.com/magnus1984/muphone.git) and then proceed
+with the installation.
 
 ```bash
 # Checkout and build the code for the backend
@@ -78,7 +80,8 @@ rm -rf muphone
 ```
 
 #### Frontend Deployment
-
+Please se the documentation for the frontend [here](https://github.com/magnus1984/muphone-frontend.git) and then proceed
+with the installation.
 ```bash
 # Checkout and build the code for the frontend
 git clone https://github.com/magnus1984/muphone-frontend.git
