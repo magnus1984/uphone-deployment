@@ -1,0 +1,40 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:CreateTable",
+                "iam:GetRole",
+                "iam:DetachRolePolicy",
+                "s3:*",
+                "dynamodb:DescribeTable",
+                "cloudformation:*",
+                "iam:CreateRole",
+                "iam:DeleteRole",
+                "iam:AttachRolePolicy",
+                "dynamodb:DeleteTable",
+                "lambda:CreateFunction",
+                "iam:PassRole",
+                "lambda:DeleteFunction",
+                "lambda:GetFunctionConfiguration",
+                "apigateway:POST",
+                "apigateway:DELETE",
+                "apigateway:PATCH",
+                "apigateway:OPTIONS",
+                "apigateway:PUT",
+                "apigateway:GET",
+                "lambda:AddPermission",
+                "cloudfront:CreateCloudFrontOriginAccessIdentity",
+                "cloudfront:GetCloudFrontOriginAccessIdentityConfig",
+                "cloudfront:DeleteCloudFrontOriginAccessIdentity",
+                "cloudfront:CreateDistribution",
+                "cloudfront:TagResource",
+                "cloudfront:GetDistribution",
+                "cloudfront:UpdateDistribution"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
