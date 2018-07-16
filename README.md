@@ -125,5 +125,7 @@ Type that address in your browser and test the application for yourself !
 
 ## Author
 Jonathan Pelletier (jonathan.pelletier1@gmail.com)
+
 Website: [https://hedgenet.info](https://hedgenet.info)
+
 Other work of interest: [Static Website on S3 + SSl support using AWS Certificate Manager](https://hedgenet.info/posts/static-s3-cloudformation.html)
