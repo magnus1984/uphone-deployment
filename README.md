@@ -17,7 +17,7 @@ The web application is a 3-tier application using the following components for e
 3. AWS DynamoDB for the data layer (highly-available).
 
 Every layer is deployed on multiple AZ, as part of AWS managed services.
-The solution supports serving the static assets over https with AWS CloudFront. The solution also conforms to modern idioms
+The solution conforms to modern idioms
 of web development such as single-page applications, serverless architecture and highly-available NoSQL like DynamoDB. 
 
 ## Deployment
