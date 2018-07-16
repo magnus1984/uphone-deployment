@@ -4,7 +4,7 @@ Instruction on how to deploy the trinimbus web application assignments
 ## Introduction
 This repo contains instructions on how to deploy a simple single-page application built with React + AWS Lambda that allows for the verification of 
 users phone numbers, as is commonly seen on many websites. This work was produced for **Byron Packwood** as part of 
-the [Trinumbus](https://www.trinimbus.com/) hiring process for solutions architect.
+the [Trinimbus](https://www.trinimbus.com/) hiring process for solutions architect.
 
 ## Live Demo
 An already deployed live demo of this application can be found here []()
