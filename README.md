@@ -87,7 +87,7 @@ Wait for the deployment to finish and query your stack for it's deployment bucke
 
 ```bash
 # Get the bucket name were to deploy the static assets
-DEPLOY_BUCKET=`aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-frontend --query 'Stacks[0].Outputs[0].OutputValue' | sed -e 's/\"//g'`
+DEPLOY_BUCKET=`aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-frontend --query 'Stacks[0].Outputs[1].OutputValue' | sed -e 's/\"//g'`
 
 # sync the build folder with the bucket
 aws s3 sync build s3://$DEPLOY_BUCKET
@@ -96,7 +96,7 @@ aws s3 sync build s3://$DEPLOY_BUCKET
 The application is now fully deployed. To access it, check the last stack output for the CloudFront distribution URL:
 
 ```bash
-aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-frontend --query 'Stacks[0].Outputs[1].OutputValue'
+aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-frontend --query 'Stacks[0].Outputs[0].OutputValue'
 ```
 
 Type that address in your browser and test the application for yourself !
