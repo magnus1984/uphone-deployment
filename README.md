@@ -2,14 +2,19 @@
 Instruction on how to deploy the trinimbus web application assignments
 
 ## Introduction
-This repo contains instruction on how to deploy a simple single page application built with React + AWS Lambda and that allows for the verification of 
-users phone numbers. This work was produced for **Byron Packwood** as part of the [Trinumbus](https://www.trinimbus.com/) hiring process for solutions architect.
+This repo contains instructions on how to deploy a simple single page application built with React + AWS Lambda that allows for the verification of 
+users phone numbers, as is commonly seen on many websites. This work was produced for **Byron Packwood** as part of 
+the [Trinumbus](https://www.trinimbus.com/) hiring process for solutions architect.
 
 ## Live Demo
 An already deployed live demo of this application can be found here []()
 
 ## Deployment
 This sections details the step required to deploy the solution on your on AWS account.
+
+### Important note on time to deploy
+In order to respect one of the requirements of the assignment (https support), a single page application served from S3 will require the use of AWS CloudFront.
+CloudFront distribution can take anywhere from a few minutes to a few hours to deploy.
 
 ### Requirements
 
@@ -54,7 +59,7 @@ Wait for the deployment to finish and query your stack for the api endpoint
 
 ```bash
 # get the api endpoint url
-REACT_APP_API_ENDPOINT_URL=`aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-backend --query 'Stacks[0].Outputs[0].OutputValue' --profile jomagnus1984 --region ca-central-1 | sed -e 's/\"//g'`
+REACT_APP_API_ENDPOINT_URL=`aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-backend --query 'Stacks[0].Outputs[0].OutputValue' | sed -e 's/\"//g'`
 # cleanup a bit
 deactivate
 cd ..
@@ -65,6 +70,38 @@ rm -rf muphone
 
 ```bash
 # Checkout and build the code for the frontend
+git clone https://github.com/magnus1984/muphone-frontend.git
+cd muphone-frontend
+nodeenv .frontenv
+source .frontenv/bin/activate
+npm install
 
+# Build the application
+REACT_API_ENDPOINT_URL=$REACT_API_ENDPOINT_URL npm run build
 
+# Deploy the frontend infrastructure
+aws cloudformation deploy --template-file src/infrastructure.yaml --stack-name jomagnus1984-trinimbus-frontend
 ```
+
+Wait for the deployment to finish and query your stack for it's deployment bucket
+
+```bash
+# Get the bucket name were to deploy the static assets
+DEPLOY_BUCKET=`aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-frontend --query 'Stacks[0].Outputs[0].OutputValue' | sed -e 's/\"//g'`
+
+# sync the build folder with the bucket
+aws s3 sync build s3://$DEPLOY_BUCKET
+```
+
+The application is now fully deployed. To access it, check the last stack output for the CloudFront distribution URL:
+
+```bash
+aws cloudformation describe-stacks --stack-name jomagnus1984-trinimbus-frontend --query 'Stacks[0].Outputs[1].OutputValue'
+```
+
+Type that address in your browser and test the application for yourself !
+
+## Author
+Jonathan Pelletier (jonathan.pelletier1@gmail.com)
+Website: [https://hedgenet.info](https://hedgenet.info)
+Other work of interest: [Static Website on S3 + SSl support using AWS Certificate Manager](https://hedgenet.info/posts/static-s3-cloudformation.html)
